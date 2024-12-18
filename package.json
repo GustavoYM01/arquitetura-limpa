@@ -1,0 +1,40 @@
+{
+  "name": "arquitetura-limpa-formacaodev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "test": "jest",
+    "migrate:make": "knex migrate:make --knexfile ./src/adapters/db/knexfile.ts --knexpath ./src/adapters/db",
+    "migrate:down": "knex migrate:rollback --knexfile ./src/adapters/db/knexfile.ts",
+    "migrate:up": "knex migrate:latest --knexfile ./src/adapters/db/knexfile.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.12.7",
+    "@types/uuid": "^9.0.8",
+    "axios": "^1.6.8",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "pg": "^8.11.5",
+    "uuid": "^9.0.1"
+  }
+}
